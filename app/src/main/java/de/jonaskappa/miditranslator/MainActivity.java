@@ -1,13 +1,21 @@
 package de.jonaskappa.miditranslator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import de.jonaskappa.miditranslator.dialogs.CreateNewPresetDialog;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,12 +26,28 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                getApplicationContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                android.R.id.text1
+        );
+
+        // adapter.add("This is an item");
+
+        ListView lView = findViewById(R.id.listView);
+        lView.setAdapter(adapter);
+
+        lView.setEmptyView(findViewById(R.id.emptyPresets));
+
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                CreateNewPresetDialog dialog = new CreateNewPresetDialog();
+                dialog.show(getSupportFragmentManager(), "createPreset");
+
             }
         });
     }
@@ -43,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_sendToRaspi) {
             return true;
         }
 

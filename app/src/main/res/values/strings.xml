@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">MIDITranslator</string>
     <string name="action_settings">Settings</string>
+    <string name="sendToRaspi">Send a Preset to Raspi</string>
+    <string name="noPresets">You have no Presets.</string>
+    <string name="cancel">cancel</string>
+    <string name="confirm">confirm</string>
+    <string name="createNewPreset">Create a new Preset</string>
+    <string name="createPresetStandardOutput">Standard Output</string>
+    <string name="createPresetMIDIInput">MIDI Input Channel</string>
+    <string name="createPresetMIDIOutput">MIDI Output Channel</string>
+    <string name="general">General Settings</string>
 </resources>
