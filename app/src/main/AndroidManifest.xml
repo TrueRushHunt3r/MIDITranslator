@@ -22,7 +22,7 @@
 
         <activity
             android:name=".EditPreset"
-            android:label="Edit Preset"
+            android:label="@string/presetLayoutName"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -33,8 +34,10 @@ public class CreateNewPresetDialog extends DialogFragment {
                         EditText standardOut = myView.findViewById(R.id.standardOut);
                         EditText inputChannel = myView.findViewById(R.id.inputChannel);
                         EditText outputChannel = myView.findViewById(R.id.outputChannel);
+                        EditText name = myView.findViewById(R.id.presetName);
 
                         Intent intent = new Intent(CreateNewPresetDialog.this.getActivity(), EditPreset.class);
+                        intent.putExtra("name", name.getText().toString());
                         intent.putExtra("standardOut", standardOut.getText());
                         intent.putExtra("input", inputChannel.getText());
                         intent.putExtra("output", outputChannel.getText());

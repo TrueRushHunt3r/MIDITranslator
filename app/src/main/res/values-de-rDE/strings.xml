@@ -11,4 +11,6 @@
     <string name="createPresetMIDIInput">MIDI Input Kanal</string>
     <string name="createPresetMIDIOutput">MIDI Output Kanal</string>
     <string name="general">Allgemeine Einstellungen</string>
+    <string name="presetLayoutName">Preset Layout</string>
+    <string name="PresetNewNameHint">Name</string>
 </resources>
