@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import de.jonaskappa.miditranslator.dialogs.EditPresetDialog;
+
 public class EditPreset extends AppCompatActivity {
 
     @Override
@@ -39,7 +41,11 @@ public class EditPreset extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.generalSettingsItem) {
-            Toast.makeText(this, "General Settings", Toast.LENGTH_SHORT).show();
+            EditPresetDialog dialog = new EditPresetDialog();
+
+            dialog.show(getSupportFragmentManager(), "editPreset");
+
+            // Toast.makeText(this, "General Settings", Toast.LENGTH_SHORT).show();
             return true;
         }
 

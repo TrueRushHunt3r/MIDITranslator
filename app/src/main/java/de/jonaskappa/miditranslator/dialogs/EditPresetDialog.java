@@ -22,7 +22,10 @@ public class EditPresetDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        final View myView = inflater.inflate(R.layout.create_new_preset_layout, null);
+        View myView = inflater.inflate(R.layout.create_new_preset_layout, null);
+
+        EditText name = myView.findViewById(R.id.presetName);
+        name.setText("Hello");
 
         builder.setTitle(R.string.general)
                 .setView(myView)
